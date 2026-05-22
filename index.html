@@ -1,0 +1,432 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Justin Wan - Software Engineer building projects in C++, Python, TypeScript, and more.">
+    <meta name="keywords" content="Justin, Wan, Portfolio, Software Engineer, Developer">
+    <meta name="author" content="Justin Wan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Justin Wan</title>
+</head>
+<body id="top" onload="checkScrollPosition()" class="bg-gray-50">
+
+    <!-- Sticky Nav on Scroll -->
+    <nav id="nav-on-scroll" style="background:rgba(53,211,153,0.975);" class="fixed hidden md:block lg:block duration-300 ease nav-top-hidden shadow left-0 w-full p-4 text-gray-900 z-40">
+        <div class="w-12/12 sm:w-11/12 md:w-12/12 lg:w-9/12 col-centered">
+            <a href="#top" class="kill-link-style xl:mr-6">
+                <span class="inline-block animate__animated animate__fadeInDown rounded-md border-4 border-gray-900 text-gray-900 select-none p-2 text-2xl xl:text-3xl font-extrabold">JW</span>
+            </a>
+            <a href="#projects" class="inline-block kill-link-style delay1 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical-2 font-extrabold">Projects</a>
+            <a href="#skills" class="inline-block kill-link-style delay1 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical-2 font-extrabold">Skills</a>
+            <a href="#about" class="inline-block kill-link-style delay1 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical-2 font-extrabold">About</a>
+            <span onclick="toggleContactMe('show')" class="inline-block delay4 ml-6 mr-3 duration-300 float-right text-2xl xl:text-3xl cursor-pointer border-4 rounded-md px-4 p-2 border-gray-900 hover:bg-gray-900 hover:text-gray-50 font-extrabold">Contact Me</span>
+        </div>
+    </nav>
+
+    <!-- Contact Me Pane -->
+    <div id="contact-me-pane" style="left:0;right:0;overflow-y:auto !important;margin-left:auto;margin-right:auto;max-height:83%;" class="fixed duration-500 ease-in-out border-4 text-center border-green-400 border-b-0 p-6 md:p-12 ease contact-me-inactive rounded-t-xl bg-gray-900 text-gray-50 shadow-xl left-0 z-50 w-11/12 auto">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+        </div>
+        <div class="text-2xl no-select md:text-3xl lg:text-5xl font-extrabold">Contact Me</div>
+        <div class="absolute right-6 top-4 md:right-16 md:top-12">
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleContactMe('hide')" class="cursor-pointer h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </div>
+        <div class="mt-10 text-left">
+            <div class="text-gray-50 text-xl md:text-2xl font-extrabold">Your Name</div>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="text" required name="name" class="w-full mt-2 p-4 rounded-md font-bold text-gray-900 shadow text-xl md:text-2xl" placeholder="Enter name" />
+                <div class="text-gray-50 text-xl mt-4 md:text-2xl font-extrabold">Your Email</div>
+                <input type="email" required name="email" class="w-full mt-2 p-4 rounded-md shadow text-xl text-gray-900 font-bold md:text-2xl" placeholder="Enter email" />
+                <div class="text-gray-50 text-xl mt-4 md:text-2xl font-extrabold">Your Message</div>
+                <textarea required name="message" class="w-full mt-2 p-4 custom-textarea rounded-md shadow text-gray-900 font-bold text-xl md:text-2xl" placeholder="Enter message"></textarea>
+                <button type="submit" class="no-select px-4 p-2 text-xl mt-5 md:text-2xl lg:text-3xl border-4 border-gray-50 inline-block rounded-md cursor-pointer duration-200 hover:bg-gray-50 hover:text-gray-900 font-extrabold">Send Message
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 -mt-1 ml-1 inline-block w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.4" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mobile Nav Toggle -->
+    <nav class="block bg-white shadow md:hidden">
+        <div style="z-index:99999 !important;" class="fixed top-10 right-6">
+            <svg onclick="openMobileNav()" xmlns="http://www.w3.org/2000/svg" class="duration-200 p-1.5 bg-gray-100 hover:bg-gray-200 h-12 w-12 rounded-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-nav" style="z-index:999999 !important;" class="fixed block md:hidden duration-300 ease bg-gray-100 offscreen-nav offscreen-nav-hidden">
+        <div class="absolute top-10 right-4">
+            <svg onclick="closeMobileNav()" xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </div>
+        <div class="relative w-12/12 text-center">
+            <span onclick="scrollToSection('top')" class="inline-block relative top-11 col-center rounded-md animate__animated xl:mr-6 animate__fadeInDown border-4 border-gray-900 text-gray-900 select-none p-2 text-2xl xl:text-3xl font-extrabold">JW</span>
+        </div>
+        <div class="mt-16 text-center col-centered">
+            <div class="text-4xl font-extrabold"><span onclick="scrollToSection('projects')" class="underline--magical">Projects</span></div>
+            <div class="text-4xl mt-4 font-extrabold"><span onclick="scrollToSection('skills')" class="underline--magical">Skills</span></div>
+            <div class="text-4xl mt-4 font-extrabold"><span onclick="scrollToSection('about')" class="underline--magical">About</span></div>
+            <div class="text-3xl mt-8 relative font-extrabold"><span onclick="openContact()" class="border-4 px-4 py-2 border-gray-900 rounded-md">Contact Me</span></div>
+        </div>
+    </div>
+
+    <!-- Green Top Bar -->
+    <div class="h-6 fixed z-30 md:relative block w-full bg-green-400"></div>
+
+    <!-- Hero Section -->
+    <div class="xl:p-20 pt-10 xl:pb-22">
+        <div class="w-12/12 sm:w-11/12 md:w-12/12 lg:w-9/12 col-centered">
+            <!-- Desktop Nav -->
+            <span class="hidden md:block lg:block">
+                <a href="#top" class="kill-link-style">
+                    <span class="inline-block rounded-md animate__animated xl:mr-6 animate__fadeInDown border-4 border-gray-900 text-gray-900 select-none p-2 text-2xl xl:text-3xl font-extrabold">JW</span>
+                </a>
+                <a href="#projects" class="inline-block animate__animated animate__fadeInDown kill-link-style delay1 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold">Projects</a>
+                <a href="#skills" class="inline-block animate__animated animate__fadeInDown kill-link-style delay2 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold">Skills</a>
+                <a href="#about" class="inline-block animate__animated animate__fadeInDown kill-link-style delay3 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold">About</a>
+                <span onclick="toggleContactMe('show')" class="inline-block animate__animated animate__flipInX delay4 ml-6 mr-3 duration-300 float-right text-2xl xl:text-3xl cursor-pointer border-4 px-2 xl:px-4 p-2 border-gray-900 hover:bg-gray-900 hover:text-gray-50 rounded-md font-extrabold">Contact Me</span>
+            </span>
+
+            <div class="mt-20">
+                <div class="w-full text-center">
+                    <div id="hero-icon" class="cursor-pointer xl:mt-10 inline-block animate__animated animate__fadeIn delay2 border-gray-900 duration-300 ease hover:border-green-400 shadow-md border-8 h-80 w-80 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+                        <span class="text-white font-extrabold text-8xl md:text-9xl select-none">JW</span>
+                    </div>
+                </div>
+                <div class="animate__animated animate__fadeInUp p-14 delay2 mt-10 xl:mt-14 text-3xl lg:text-5xl font-extrabold text-gray-900">
+                    Hey, I'm <span class="text-green-500">Justin Wan.</span> I'm a software engineer who loves building things -- from poker solvers to RC planes.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Work Section (Dark) -->
+    <div class="p-4 md:p-20 bg-gray-900 text-gray-50">
+        <div class="sm:w-12/12 animate__animated animate__fadeIn delay2 text-center md:w-12/12 col-centered">
+            <div class="text-4xl w-full md:text-5xl lg:text-6xl pt-10 md:pt-0 font-extrabold">Featured Work</div>
+            <div class="grid grid-cols-12 mt-8">
+
+                <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 p-4">
+                    <a href="https://github.com/JustinwkWan/PokerSolver" target="_blank" class="kill-link-style">
+                        <div class="cursor-pointer move-up-slightly duration-200 shadow-md hover:shadow-xl">
+                            <div class="project-picture rounded-t-2xl h-60 w-full bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            </div>
+                            <div class="project-description p-4 py-6 text-3xl font-extrabold text-center text-gray-900 bg-gradient-to-r from-green-300 to-green-400 rounded-b-2xl">
+                                Poker Solver
+                                <div class="font-bold mt-2 text-xl">C++ engine with web interface</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 p-4">
+                    <a href="https://github.com/JustinwkWan/CrowdSensing" target="_blank" class="kill-link-style">
+                        <div class="cursor-pointer move-up-slightly duration-200 shadow-md hover:shadow-xl">
+                            <div class="project-picture rounded-t-2xl h-60 w-full bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                            </div>
+                            <div class="project-description p-4 py-6 text-3xl font-extrabold text-center text-gray-900 bg-gradient-to-r from-purple-300 to-purple-400 rounded-b-2xl">
+                                CrowdSensing
+                                <div class="font-bold mt-2 text-xl">MAC address analysis & security</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 p-4">
+                    <a href="https://github.com/JustinwkWan/RCPlane" target="_blank" class="kill-link-style">
+                        <div class="cursor-pointer move-up-slightly duration-200 shadow-md hover:shadow-xl">
+                            <div class="project-picture rounded-t-2xl h-60 w-full bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
+                            </div>
+                            <div class="project-description p-4 py-6 text-3xl font-extrabold text-center text-gray-900 bg-gradient-to-r from-blue-300 to-blue-400 rounded-b-2xl">
+                                RC Plane
+                                <div class="font-bold mt-2 text-xl">C++ embedded receiver controller</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Grid Section -->
+    <div id="projects" class="p-4 md:pt-24 pb-26 xl:p-20 bg-gray-50 text-gray-900">
+        <div class="sm:w-12/12 md:w-12/12 col-centered">
+            <div class="p-4 pt-8 text-4xl md:text-6xl font-extrabold">My Projects</div>
+            <div class="p-4 text-2xl md:text-4xl w-10/12 font-extrabold">I love building things across the stack -- from low-level C++ engines to web apps and browser extensions.</div>
+
+            <div class="grid grid-cols-12">
+
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+                    <a target="_blank" href="https://github.com/JustinwkWan/PokerSolver" class="kill-link-style">
+                        <div class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
+                            <div class="w-full text-center">
+                                <div class="col-centered rounded-md mt-2 mb-1 h-14 w-14 bg-green-400 flex items-center justify-center rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">Poker Solver</span>
+                                <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">C++ solver with web UI</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+                    <a target="_blank" href="https://github.com/JustinwkWan/PokerAnalysis" class="kill-link-style">
+                        <div class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
+                            <div class="w-full text-center">
+                                <div class="col-centered rounded-md mt-2 mb-1 h-14 w-14 bg-purple-400 flex items-center justify-center rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">Poker Analysis</span>
+                                <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">Full-stack poker analytics</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+                    <a target="_blank" href="https://github.com/JustinwkWan/CrowdSensing" class="kill-link-style">
+                        <div class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
+                            <div class="w-full text-center">
+                                <div class="col-centered rounded-md mt-2 mb-1 h-14 w-14 bg-yellow-400 flex items-center justify-center rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">CrowdSensing</span>
+                                <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">MAC address security analysis</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+                    <a target="_blank" href="https://github.com/JustinwkWan/RCPlane" class="kill-link-style">
+                        <div class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
+                            <div class="w-full text-center">
+                                <div class="col-centered rounded-md mt-2 mb-1 h-14 w-14 bg-blue-400 flex items-center justify-center rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">RC Plane</span>
+                                <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">Embedded C++ controller</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+                    <a target="_blank" href="https://github.com/JustinwkWan/Poker-Project-" class="kill-link-style">
+                        <div class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
+                            <div class="w-full text-center">
+                                <div class="col-centered rounded-md mt-2 mb-1 h-14 w-14 bg-red-400 flex items-center justify-center rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">Poker Game</span>
+                                <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">Web-based Java poker</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+                    <a target="_blank" href="https://github.com/JustinwkWan/Japan-Countdown" class="kill-link-style">
+                        <div class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
+                            <div class="w-full text-center">
+                                <div class="col-centered rounded-md mt-2 mb-1 h-14 w-14 bg-pink-400 flex items-center justify-center rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">Japan Countdown</span>
+                                <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">Browser extension</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+                    <a target="_blank" href="https://github.com/JustinwkWan/Game-Project-" class="kill-link-style">
+                        <div class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
+                            <div class="w-full text-center">
+                                <div class="col-centered rounded-md mt-2 mb-1 h-14 w-14 bg-indigo-400 flex items-center justify-center rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">Physics Game</span>
+                                <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">Physics-based object movement</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+                    <a target="_blank" href="https://github.com/JustinwkWan/HW-Projects-" class="kill-link-style">
+                        <div class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
+                            <div class="w-full text-center">
+                                <div class="col-centered rounded-md mt-2 mb-1 h-14 w-14 bg-green-400 flex items-center justify-center rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">C++ Projects</span>
+                                <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">Coursework & algorithms</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 p-4">
+                    <a target="_blank" href="https://github.com/JustinwkWan/Birthday_Present" class="kill-link-style">
+                        <div class="cursor-pointer text-center bg-gradient-to-r from-white to-gray-100 duration-200 ease move-up-slightly hover:shadow-xl shadow-md p-4 w-full h-auto border-4 text-gray-900 border-gray-900 rounded-lg">
+                            <div class="w-full text-center">
+                                <div class="col-centered rounded-md mt-2 mb-1 h-14 w-14 bg-yellow-300 flex items-center justify-center rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <span class="text-2xl lg:text-3xl font-extrabold text-gray-900">Birthday Present</span>
+                                <div class="mt-1 text-gray-900 font-extrabold text-xl lg:text-2xl">Interactive web experience</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills Section (Dark) -->
+    <div id="skills" class="p-4 md:p-20 bg-gray-900 text-gray-50">
+        <div class="sm:w-12/12 md:w-12/12 lg:w-9/12 col-centered">
+            <div class="text-4xl md:text-6xl pt-10 md:pt-0 font-extrabold text-center">Skills & Technologies</div>
+            <div class="grid grid-cols-12 mt-12 gap-4">
+
+                <div class="col-span-6 md:col-span-4 lg:col-span-3 p-3">
+                    <div class="text-center p-6 bg-gray-800 rounded-xl duration-200 hover:bg-gray-700 move-up-slightly shadow-md">
+                        <div class="text-4xl font-extrabold text-green-400">C++</div>
+                        <div class="mt-2 text-lg font-bold text-gray-300">Primary Language</div>
+                    </div>
+                </div>
+
+                <div class="col-span-6 md:col-span-4 lg:col-span-3 p-3">
+                    <div class="text-center p-6 bg-gray-800 rounded-xl duration-200 hover:bg-gray-700 move-up-slightly shadow-md">
+                        <div class="text-4xl font-extrabold text-blue-400">Python</div>
+                        <div class="mt-2 text-lg font-bold text-gray-300">Data & Security</div>
+                    </div>
+                </div>
+
+                <div class="col-span-6 md:col-span-4 lg:col-span-3 p-3">
+                    <div class="text-center p-6 bg-gray-800 rounded-xl duration-200 hover:bg-gray-700 move-up-slightly shadow-md">
+                        <div class="text-4xl font-extrabold text-yellow-400">JavaScript</div>
+                        <div class="mt-2 text-lg font-bold text-gray-300">Web & Extensions</div>
+                    </div>
+                </div>
+
+                <div class="col-span-6 md:col-span-4 lg:col-span-3 p-3">
+                    <div class="text-center p-6 bg-gray-800 rounded-xl duration-200 hover:bg-gray-700 move-up-slightly shadow-md">
+                        <div class="text-4xl font-extrabold text-purple-400">TypeScript</div>
+                        <div class="mt-2 text-lg font-bold text-gray-300">Full-Stack</div>
+                    </div>
+                </div>
+
+                <div class="col-span-6 md:col-span-4 lg:col-span-3 p-3">
+                    <div class="text-center p-6 bg-gray-800 rounded-xl duration-200 hover:bg-gray-700 move-up-slightly shadow-md">
+                        <div class="text-4xl font-extrabold text-red-400">Java</div>
+                        <div class="mt-2 text-lg font-bold text-gray-300">Applications</div>
+                    </div>
+                </div>
+
+                <div class="col-span-6 md:col-span-4 lg:col-span-3 p-3">
+                    <div class="text-center p-6 bg-gray-800 rounded-xl duration-200 hover:bg-gray-700 move-up-slightly shadow-md">
+                        <div class="text-4xl font-extrabold text-pink-400">HTML/CSS</div>
+                        <div class="mt-2 text-lg font-bold text-gray-300">Web Design</div>
+                    </div>
+                </div>
+
+                <div class="col-span-6 md:col-span-4 lg:col-span-3 p-3">
+                    <div class="text-center p-6 bg-gray-800 rounded-xl duration-200 hover:bg-gray-700 move-up-slightly shadow-md">
+                        <div class="text-4xl font-extrabold text-indigo-400">CMake</div>
+                        <div class="mt-2 text-lg font-bold text-gray-300">Build Systems</div>
+                    </div>
+                </div>
+
+                <div class="col-span-6 md:col-span-4 lg:col-span-3 p-3">
+                    <div class="text-center p-6 bg-gray-800 rounded-xl duration-200 hover:bg-gray-700 move-up-slightly shadow-md">
+                        <div class="text-4xl font-extrabold text-green-300">Git</div>
+                        <div class="mt-2 text-lg font-bold text-gray-300">Version Control</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="p-4 md:p-20 xl:p-24 bg-gray-50 text-gray-900">
+        <div class="sm:w-12/12 md:w-12/12 lg:w-9/12 col-centered">
+            <div class="text-4xl md:text-6xl font-extrabold">About Me</div>
+            <div class="mt-8 text-2xl md:text-3xl font-extrabold leading-relaxed">
+                I'm a software engineer with a passion for solving complex problems. My interests range from
+                <span class="text-green-500">poker game theory</span> and
+                <span class="text-purple-500">network security</span> to
+                <span class="text-blue-500">embedded systems</span> and
+                <span class="text-pink-500">web development</span>.
+            </div>
+            <div class="mt-6 text-2xl md:text-3xl font-extrabold leading-relaxed">
+                I enjoy taking on challenging projects that push me to learn new technologies and think differently. Whether it's building a poker solver engine in C++ or analyzing MAC addresses for security research, I'm always looking for the next interesting problem to tackle.
+            </div>
+            <div class="mt-10 flex flex-wrap gap-4">
+                <a href="https://github.com/JustinwkWan" target="_blank" class="kill-link-style inline-block text-xl md:text-2xl font-extrabold border-4 border-gray-900 rounded-md px-6 py-3 duration-200 hover:bg-gray-900 hover:text-gray-50">
+                    GitHub
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block -mt-1 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+                <span onclick="toggleContactMe('show')" class="cursor-pointer inline-block text-xl md:text-2xl font-extrabold border-4 border-green-500 bg-green-500 text-gray-900 rounded-md px-6 py-3 duration-200 hover:bg-green-600 hover:border-green-600">
+                    Get In Touch
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block -mt-1 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="p-6 md:p-10 bg-gray-900 text-gray-50 text-center">
+        <div class="sm:w-12/12 md:w-12/12 lg:w-9/12 col-centered">
+            <a href="#top" class="kill-link-style">
+                <span class="inline-block rounded-md border-4 border-green-400 text-green-400 select-none p-2 text-2xl font-extrabold">JW</span>
+            </a>
+            <div class="mt-4 text-lg font-bold text-gray-400">Built by Justin Wan</div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div onclick="toggleContactMe('hide')" id="overlay" class="fixed hidden top-0 left-0 w-full h-full z-40" style="background:rgba(0,0,0,0.5);"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

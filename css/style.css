@@ -1,0 +1,140 @@
+html {
+    scroll-behavior: smooth !important;
+}
+
+.col-centered {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.contact-me-inactive {
+    bottom: -100%;
+}
+
+.contact-me-active {
+    bottom: 0px;
+}
+
+.custom-textarea {
+    height: 210px;
+}
+
+.nav-top-hidden {
+    top: -160px;
+}
+
+.nav-top-visible {
+    top: 0px;
+}
+
+.underline--magical {
+    background-image: linear-gradient(120deg, #35D399 0%, #35D399 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.25em;
+    background-position: 0 89%;
+    transition: background-size 0.2s ease-in;
+    padding-right: 7px;
+    padding-left: 3px;
+}
+
+.underline--magical:hover {
+    background-size: 100% 89%;
+    padding-top: 3px;
+}
+
+.underline--magical-2 {
+    background-image: linear-gradient(120deg, #FDE68A 0%, #FDE68A 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.25em;
+    background-position: 0 89%;
+    transition: background-size 0.2s ease-in;
+    padding-right: 7px;
+    padding-left: 3px;
+}
+
+.underline--magical-2:hover {
+    background-size: 100% 89%;
+    padding-top: 3px;
+}
+
+.move-up-slightly {
+    position: relative;
+    top: 0px;
+    transition: all 0.3s ease-out;
+}
+
+.move-up-slightly:hover {
+    top: -6px;
+}
+
+.project-picture {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.offscreen-nav-hidden {
+    right: -100% !important;
+}
+
+.offscreen-nav {
+    position: fixed;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.delay1 {
+    animation-delay: 0.15s;
+}
+
+.delay2 {
+    animation-delay: 0.3s;
+}
+
+.delay3 {
+    animation-delay: 0.45s;
+}
+
+.delay4 {
+    animation-delay: 0.5s;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+a:visited {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.kill-link-style {
+    color: inherit;
+    text-decoration: none;
+}
+
+.kill-link-style:visited {
+    color: inherit;
+}
+
+@media only screen and (max-width: 413px) {
+    .contact-me-inactive {
+        bottom: -170%;
+    }
+}
+
+@media only screen and (max-height: 500px) {
+    .contact-me-inactive {
+        bottom: -500%;
+    }
+}
