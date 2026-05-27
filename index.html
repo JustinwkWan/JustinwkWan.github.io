@@ -7,7 +7,7 @@
     <meta name="author" content="Justin Wan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>Justin Wan</title>
@@ -106,7 +106,7 @@
                     <img src="img/justin.jpg" alt="Photo of Justin Wan" class="cursor-pointer xl:mt-10 inline-block animate__animated animate__fadeIn delay2 border-gray-900 duration-300 ease hover:border-green-400 shadow-md border-8 h-80 w-80 md:w-96 md:h-96 object-cover" style="border-radius:100%;" />
                 </div>
                 <div class="animate__animated animate__fadeInUp p-14 delay2 mt-10 xl:mt-14 text-3xl lg:text-5xl font-extrabold text-gray-900">
-                    Hey, I'm <span class="text-green-500">Justin Wan.</span> I'm a software engineer who loves building things -- from poker solvers to RC planes.
+                    Hey, I'm <span class="text-green-500">Justin Wan.</span> I'm a software engineer who loves building things -- from AI security agents to IoT hardware and poker solvers.
                 </div>
             </div>
         </div>
@@ -119,6 +119,34 @@
             <div class="grid grid-cols-12 mt-8">
 
                 <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 p-4">
+                    <a href="https://github.com/JustinwkWan/netsentinel" target="_blank" class="kill-link-style">
+                        <div class="cursor-pointer move-up-slightly duration-200 shadow-md hover:shadow-xl">
+                            <div class="project-picture rounded-t-2xl h-60 w-full bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                            </div>
+                            <div class="project-description p-4 py-6 text-3xl font-extrabold text-center text-gray-900 bg-gradient-to-r from-red-300 to-red-400 rounded-b-2xl">
+                                NetSentinel
+                                <div class="font-bold mt-2 text-xl">AI-powered network security agent</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 p-4">
+                    <a href="https://github.com/JustinwkWan/badminton-tracker-app" target="_blank" class="kill-link-style">
+                        <div class="cursor-pointer move-up-slightly duration-200 shadow-md hover:shadow-xl">
+                            <div class="project-picture rounded-t-2xl h-60 w-full bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                            </div>
+                            <div class="project-description p-4 py-6 text-3xl font-extrabold text-center text-gray-900 bg-gradient-to-r from-teal-300 to-teal-400 rounded-b-2xl">
+                                Badminton Tracker
+                                <div class="font-bold mt-2 text-xl">ESP32 IoT swing tracker + React app</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 p-4">
                     <a href="https://github.com/JustinwkWan/PokerSolver" target="_blank" class="kill-link-style">
                         <div class="cursor-pointer move-up-slightly duration-200 shadow-md hover:shadow-xl">
                             <div class="project-picture rounded-t-2xl h-60 w-full bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center">
@@ -126,35 +154,7 @@
                             </div>
                             <div class="project-description p-4 py-6 text-3xl font-extrabold text-center text-gray-900 bg-gradient-to-r from-green-300 to-green-400 rounded-b-2xl">
                                 Poker Solver
-                                <div class="font-bold mt-2 text-xl">C++ engine with web interface</div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 p-4">
-                    <a href="https://github.com/JustinwkWan/CrowdSensing" target="_blank" class="kill-link-style">
-                        <div class="cursor-pointer move-up-slightly duration-200 shadow-md hover:shadow-xl">
-                            <div class="project-picture rounded-t-2xl h-60 w-full bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                            </div>
-                            <div class="project-description p-4 py-6 text-3xl font-extrabold text-center text-gray-900 bg-gradient-to-r from-purple-300 to-purple-400 rounded-b-2xl">
-                                CrowdSensing
-                                <div class="font-bold mt-2 text-xl">MAC address analysis & security</div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 p-4">
-                    <a href="https://github.com/JustinwkWan/RCPlane" target="_blank" class="kill-link-style">
-                        <div class="cursor-pointer move-up-slightly duration-200 shadow-md hover:shadow-xl">
-                            <div class="project-picture rounded-t-2xl h-60 w-full bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
-                            </div>
-                            <div class="project-description p-4 py-6 text-3xl font-extrabold text-center text-gray-900 bg-gradient-to-r from-blue-300 to-blue-400 rounded-b-2xl">
-                                RC Plane
-                                <div class="font-bold mt-2 text-xl">C++ embedded receiver controller</div>
+                                <div class="font-bold mt-2 text-xl">C++ GTO engine with web interface</div>
                             </div>
                         </div>
                     </a>
@@ -356,6 +356,13 @@
 
                 <div class="col-span-6 md:col-span-4 lg:col-span-3 p-3">
                     <div class="text-center p-6 bg-gray-800 rounded-xl duration-200 hover:bg-gray-700 move-up-slightly shadow-md">
+                        <div class="text-4xl font-extrabold text-cyan-400">React</div>
+                        <div class="mt-2 text-lg font-bold text-gray-300">Frontend & Apps</div>
+                    </div>
+                </div>
+
+                <div class="col-span-6 md:col-span-4 lg:col-span-3 p-3">
+                    <div class="text-center p-6 bg-gray-800 rounded-xl duration-200 hover:bg-gray-700 move-up-slightly shadow-md">
                         <div class="text-4xl font-extrabold text-red-400">Java</div>
                         <div class="mt-2 text-lg font-bold text-gray-300">Applications</div>
                     </div>
@@ -392,13 +399,13 @@
             <div class="text-4xl md:text-6xl font-extrabold">About Me</div>
             <div class="mt-8 text-2xl md:text-3xl font-extrabold leading-relaxed">
                 I'm a software engineer with a passion for solving complex problems. My interests range from
-                <span class="text-green-500">poker game theory</span> and
-                <span class="text-purple-500">network security</span> to
-                <span class="text-blue-500">embedded systems</span> and
-                <span class="text-pink-500">web development</span>.
+                <span class="text-red-500">AI-driven security</span> and
+                <span class="text-green-500">poker game theory</span> to
+                <span class="text-teal-500">IoT hardware</span> and
+                <span class="text-pink-500">full-stack web development</span>.
             </div>
             <div class="mt-6 text-2xl md:text-3xl font-extrabold leading-relaxed">
-                I enjoy taking on challenging projects that push me to learn new technologies and think differently. Whether it's building a poker solver engine in C++ or analyzing MAC addresses for security research, I'm always looking for the next interesting problem to tackle.
+                I enjoy taking on challenging projects that push me to learn new technologies and think differently. Whether it's building an AI agent that hunts network threats, tracking badminton swings with an ESP32, or computing Nash equilibrium strategies for poker, I'm always looking for the next interesting problem to tackle.
             </div>
             <div class="mt-10 flex flex-wrap gap-4">
                 <a href="https://github.com/JustinwkWan" target="_blank" class="kill-link-style inline-block text-xl md:text-2xl font-extrabold border-4 border-gray-900 rounded-md px-6 py-3 duration-200 hover:bg-gray-900 hover:text-gray-50">
